@@ -21,8 +21,8 @@ jobs:
       - name: Check Configuration
         run: |
           function required () { if ! [[ "$1" ]]; then echo "$2 variable can't be null." && exit 1; fi }
-          required "${{ USERNAME }}" "USERNAME"
-          required "${{ PASSWORD }}" "PASSWORD"
+          required "${{ secrets.USERNAME }" "mamjs.secrets"
+          required "${{ secrets.PASSWORD }}" "Karenjake2022!.secrets"
 
           required "${{ steps.config.outputs.tool_repo }}" "TOOL_REPO config"
           required "${{ steps.config.outputs.url }}" "URL config"
